@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1v5dke6cqcvb"]
+
+[ext_resource type="Script" path="res://Scripts/paddle.gd" id="1_ildjj"]
+[ext_resource type="Texture2D" uid="uid://33yvpgppb2yh" path="res://icon.svg" id="2_x8sjl"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_1dcc8"]
+size = Vector2(20, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2npli"]
+size = Vector2(20, 200)
+
+[node name="Paddle" type="AnimatableBody2D"]
+script = ExtResource("1_ildjj")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+mesh = SubResource("QuadMesh_1dcc8")
+texture = ExtResource("2_x8sjl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2npli")

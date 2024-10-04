@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://rqyq4xcgrxo0"]
+
+[ext_resource type="PackedScene" uid="uid://d1v5dke6cqcvb" path="res://Objects/paddle.tscn" id="1_nfocy"]
+[ext_resource type="PackedScene" uid="uid://dtq2xiugvjvho" path="res://Objects/ball.tscn" id="2_888vo"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Paddle" parent="." instance=ExtResource("1_nfocy")]
+position = Vector2(50, 317)
+
+[node name="Node2D" parent="." instance=ExtResource("2_888vo")]
+position = Vector2(517, 280)

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtq2xiugvjvho"]
+
+[ext_resource type="Texture2D" uid="uid://33yvpgppb2yh" path="res://icon.svg" id="1_1lp5x"]
+[ext_resource type="Script" path="res://Scripts/ball.gd" id="1_ifx1b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bi8sw"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_t1e48"]
+size = Vector2(20, 20)
+
+[node name="Node2D" type="CharacterBody2D"]
+script = ExtResource("1_ifx1b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bi8sw")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+mesh = SubResource("QuadMesh_t1e48")
+texture = ExtResource("1_1lp5x")
+
+[node name="down" type="RayCast2D" parent="."]
+target_position = Vector2(0, 25)
+
+[node name="right" type="RayCast2D" parent="."]
+target_position = Vector2(25, 0)
+
+[node name="left" type="RayCast2D" parent="."]
+target_position = Vector2(-25, 0)
+
+[node name="up" type="RayCast2D" parent="."]
+target_position = Vector2(0, -25)
